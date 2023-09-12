@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Sorting App</title>
+  <meta charset="UTF-8">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    h2 {
+      color: #777;
+      margin-top: 30px;
+    }
+
+    form {
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      width: 300px;
+    }
+
+    input[type="submit"] {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<h1>Sorting App</h1>
+
+<form action="#" th:action="@{/generate}" method="post">
+  <input type="submit" value="Generate Array">
+</form>
+<h2>Custom Array:</h2>
+<form action="#" th:action="@{/customArray}" method="post">
+  <input type="text" name="elements" placeholder="Enter elements (comma-separated)">
+  <input type="submit" value="Create Array">
+</form>
+<form action="#" th:action="@{/sort/bubble}" method="post">
+  <input type="submit" value="Bubble Sort">
+</form>
+
+<form action="#" th:action="@{/sort/selection}" method="post">
+  <input type="submit" value="Selection Sort">
+</form>
+
+<form action="#" th:action="@{/sort/insertion}" method="post">
+  <input type="submit" value="Insertion Sort">
+</form>
+
+<form action="#" th:action="@{/sort/merge}" method="post">
+  <input type="submit" value="Merge Sort">
+</form>
+
+<form action="#" th:action="@{/sort/quick}" method="post">
+  <input type="submit" value="Quick Sort">
+</form>
+
+<h2>Array:</h2>
+<p th:text="${array}"></p>
+</body>
+</html>
